@@ -1,0 +1,102 @@
+<ion-header>
+</ion-header>
+
+<ion-content color="primary">
+  <form padding [formGroup]="FGroup">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item color="primary">
+            <ion-avatar class="ion-margin-start">
+              <img (click)="presentActionSheet()" src="../assets/img/avatar.jpg" alt="">
+            </ion-avatar>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-label position='floating'> Nome* </ion-label>
+            <ion-input type="text" placeholder="" formControlName="nome"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-label position='floating'> Endereço Comercial* </ion-label>
+            <ion-input type="text" placeholder="" formControlName="enderecoComercial"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-label position='floating'> Número* </ion-label>
+            <ion-input type="number" placeholder="" formControlName="numero"> </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-label position='floating'> Complemento </ion-label>
+            <ion-input type="text" placeholder="" formControlName="complemento"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-label position='floating'> CEP* </ion-label>
+            <ion-input type="text" placeholder="" formControlName="cep"
+              [brmasker]="{mask:'00000-000', len:9, type:'num'}"> </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-label position='floating'> Cidade </ion-label>
+            <ion-input type="text" placeholder="" formControlName="cidade"> </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-label position='floating'> UF* </ion-label>
+            <ion-input type="text" placeholder="" formControlName="uf"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-label position='floating'> Tel. Comercial* </ion-label>
+            <ion-input type="text" placeholder="" formControlName="telComercial" [brmasker]="{phone: true}">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-label position='floating'> Tel. Celular </ion-label>
+            <ion-input type="text" placeholder="" formControlName="telCelular" [brmasker]="{phone: true}"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item color="secondary">
+            <ion-label position='floating'> Email </ion-label>
+            <ion-input type="text" placeholder="" formControlName="email"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-label color="primary"> * Campos obrigatórios </ion-label>
+    <ion-button (click)="submitForm()" expand="full" [disabled]="!FGroup.valid"> Enviar </ion-button>
+  </ion-toolbar>
+</ion-footer>

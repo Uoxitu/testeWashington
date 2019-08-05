@@ -1,0 +1,7 @@
+{
+  "name": "desafioSabion",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
